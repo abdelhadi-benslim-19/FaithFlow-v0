@@ -3,26 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FaithFlow | Home</title>
+    <title>Prayer Page</title>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header-container"></div>
     
-      <!-- Placeholder for Header -->
-      <div id="header-placeholder"></div>
+    <!-- Main Content -->
+    <div class="p-4">
+        <!-- Tabs Navigation -->
+        <div class="overflow-x-auto">
+            <div class="flex space-x-4 border-b border-gray-300">
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="prayer-times">Prayer Times</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="quran-reader">Quran Reader</button>
+                <!-- Add more tabs as needed -->
+            </div>
+        </div>
 
-      <!-- Main Content -->
-      <div class="p-4">
-          <!-- Content goes here -->
-          <h1>Prayer Page</h1>
-      </div>
-  
-      <!-- Placeholder for Navbar -->
-      <div id="navbar-placeholder"></div>
+        <!-- Tab Content -->
+        <div id="tab-content" class="mt-4">
+            <!-- Prayer Times Content -->
+            <div id="prayer-times" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Prayer Times</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <span class="text-lg font-semibold">Fajr</span>
+                        <span class="text-lg">05:00 AM</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                    </div>
+                    <!-- Repeat similar blocks for other prayer times -->
+                </div>
+            </div>
+            <!-- Quran Reader Content -->
+            <div id="quran-reader" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Quran Reader</h2>
+                <p>Content for the Quran Reader goes here.</p>
+            </div>
+            <!-- Add more tab contents as needed -->
+        </div>
+    </div>
 
+    <!-- Bottom Navbar -->
+    <div id="navbar-container"></div>
 
-
-      <script src="./script.js"></script>
+    <!-- Scripts -->
+    <script src="./script.js"></script>
 </body>
 </html>
