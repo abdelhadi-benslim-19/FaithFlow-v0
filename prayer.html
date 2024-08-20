@@ -27,15 +27,8 @@
             <!-- Prayer Times Content -->
             <div id="prayer-times" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Prayer Times</h2>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                        <span class="text-lg font-semibold">Fajr</span>
-                        <span class="text-lg">05:00 AM</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                        </svg>
-                    </div>
-                    <!-- Repeat similar blocks for other prayer times -->
+                <div id="prayer-times-container" class="space-y-4">
+                    <!-- Prayer times will be dynamically inserted here -->
                 </div>
             </div>
             <!-- Quran Reader Content -->
@@ -52,5 +45,6 @@
 
     <!-- Scripts -->
     <script src="./script.js"></script>
+    <script src="./prayer.js"></script>
 </body>
-</html>
+        </html>
