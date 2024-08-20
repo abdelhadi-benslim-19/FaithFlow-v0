@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load prayer times
     const prayerTimesContainer = document.getElementById('prayer-times-container');
-    const apiKey = 'YOUR_API_KEY'; // Replace with your Aladhan API key
+    const apiKey = 'http://api.aladhan.com/v1/timingsByAddress/:date'; // Replace with your Aladhan API key
     const address = 'YOUR_ADDRESS'; // Replace with your address
     const apiUrl = `http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(address)}&method=2`;
 
