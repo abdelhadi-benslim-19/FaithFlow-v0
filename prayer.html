@@ -18,7 +18,11 @@
             <div class="flex space-x-4 border-b border-gray-300">
                 <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="prayer-times">Prayer Times</button>
                 <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="quran-reader">Quran Reader</button>
-                <!-- Add more tabs as needed -->
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="dhikr">Dhikr</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="dua">Dua</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="islamic-calendar">Islamic Calendar</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="hadith">Hadith</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="islamic-resources">Islamic Resources</button>
             </div>
         </div>
 
@@ -29,74 +33,79 @@
                 <h2 class="text-xl font-bold mb-2">Prayer Times</h2>
                 <div id="prayer-times-container" class="space-y-4">
                     <!-- Prayer times will be dynamically inserted here -->
-                        <div class="p-4">
-        <!-- Prayer Times Container -->
-        <div id="prayer-times-container" class="space-y-4">
-            <!-- Fajr Prayer Time -->
-            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                <!-- Sun Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                </svg>
-                <!-- Prayer Name -->
-                <span class="text-lg font-semibold">Fajr</span>
-                <!-- Prayer Time -->
-                <span class="text-lg">05:00 AM</span>
-            </div>
-            <!-- Dhuhr Prayer Time -->
-            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                <!-- Sun Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                </svg>
-                <!-- Prayer Name -->
-                <span class="text-lg font-semibold">Dhuhr</span>
-                <!-- Prayer Time -->
-                <span class="text-lg">12:30 PM</span>
-            </div>
-            <!-- Asr Prayer Time -->
-            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                <!-- Sun Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                </svg>
-                <!-- Prayer Name -->
-                <span class="text-lg font-semibold">Asr</span>
-                <!-- Prayer Time -->
-                <span class="text-lg">03:30 PM</span>
-            </div>
-            <!-- Maghrib Prayer Time -->
-            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                <!-- Sun Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                </svg>
-                <!-- Prayer Name -->
-                <span class="text-lg font-semibold">Maghrib</span>
-                <!-- Prayer Time -->
-                <span class="text-lg">06:45 PM</span>
-            </div>
-            <!-- Isha Prayer Time -->
-            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                <!-- Sun Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                </svg>
-                <!-- Prayer Name -->
-                <span class="text-lg font-semibold">Isha</span>
-                <!-- Prayer Time -->
-                <span class="text-lg">08:00 PM</span>
-            </div>
-        </div>
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                        <span class="text-lg font-semibold">Fajr</span>
+                        <span class="text-lg">05:00 AM</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                        <span class="text-lg font-semibold">Dhuhr</span>
+                        <span class="text-lg">12:30 PM</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                        <span class="text-lg font-semibold">Asr</span>
+                        <span class="text-lg">03:30 PM</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                        <span class="text-lg font-semibold">Maghrib</span>
+                        <span class="text-lg">06:45 PM</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
+                        </svg>
+                        <span class="text-lg font-semibold">Isha</span>
+                        <span class="text-lg">08:00 PM</span>
                     </div>
                 </div>
             </div>
+
             <!-- Quran Reader Content -->
             <div id="quran-reader" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Quran Reader</h2>
                 <p>Content for the Quran Reader goes here.</p>
             </div>
-            <!-- Add more tab contents as needed -->
+
+            <!-- Dhikr Content -->
+            <div id="dhikr" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Dhikr</h2>
+                <p>Content for Dhikr goes here.</p>
+            </div>
+
+            <!-- Dua Content -->
+            <div id="dua" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Dua</h2>
+                <p>Content for Dua goes here.</p>
+            </div>
+
+            <!-- Islamic Calendar Content -->
+            <div id="islamic-calendar" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Islamic Calendar</h2>
+                <p>Content for Islamic Calendar goes here.</p>
+            </div>
+
+            <!-- Hadith Content -->
+            <div id="hadith" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Hadith</h2>
+                <p>Content for Hadith goes here.</p>
+            </div>
+
+            <!-- Islamic Resources Content -->
+            <div id="islamic-resources" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Islamic Resources</h2>
+                <p>Content for Islamic Resources goes here.</p>
+            </div>
         </div>
     </div>
 
@@ -107,4 +116,4 @@
     <script src="./script.js"></script>
    <!-- <script src="./prayer.js"></script> -->
 </body>
-        </html>
+    </html>
