@@ -1,85 +1,99 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('button[data-target]');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            const targetId = this.getAttribute('data-target');
-
-            tabs.forEach(t => t.classList.remove('border-b-2', 'border-blue-500'));
-            this.classList.add('border-b-2', 'border-blue-500');
-
-            contents.forEach(content => {
-                if (content.id === targetId) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-    // Default to the first tab
-    if (tabs.length > 0) {
-        tabs[0].click();
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to get the user's location
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(fetchPrayerTimes, handleGeolocationError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
     }
 
-    // Request user's location
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const { latitude, longitude } = position.coords;
-            getAddressFromLocation(latitude, longitude)
-                .then(address => fetchPrayerTimes(address))
-                .catch(error => {
-                    console.error('Error converting location to address:', error);
-                    document.getElementById('prayer-times-container').innerHTML = '<p class="text-red-500">Failed to get address from location. Please enable location services.</p>';
-                });
-        }, error => {
-            console.error('Error getting location:', error);
-            document.getElementById('prayer-times-container').innerHTML = '<p class="text-red-500">Failed to get location. Please enable location services.</p>';
-        });
-    } else {
-        document.getElementById('prayer-times-container').innerHTML = '<p class="text-red-500">Geolocation is not supported by this browser.</p>';
+    // Function to handle geolocation errors
+    function handleGeolocationError(error) {
+        console.error("Geolocation error: ", error);
+        alert("Unable to retrieve your location.");
     }
 
-    // Function to get address from location
-    function getAddressFromLocation(latitude, longitude) {
-        const apiKey = 'YOUR_OPENCAGE_API_KEY'; // Replace with your OpenCage API key
-        const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
-
-        return fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.results.length > 0) {
-                    return data.results[0].formatted; // Return the formatted address
-                } else {
-                    throw new Error('No address found');
-                }
-            });
-    }
-
-    // Function to fetch prayer times
-    function fetchPrayerTimes(address) {
-        const apiUrl = `http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(address)}&method=2`;
+    // Function to fetch prayer times from the API
+    function fetchPrayerTimes(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const apiUrl = `http://api.aladhan.com/v1/timingsByCity?latitude=${lat}&longitude=${lon}&method=2`;
 
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                const timings = data.data.timings;
-                const prayers = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
-                document.getElementById('prayer-times-container').innerHTML = prayers.map(prayer => `
-                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
-                        <span class="text-lg font-semibold">${prayer}</span>
-                        <span class="text-lg">${timings[prayer]}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 0v4m0-4h4m-4 0H8m4 12v-4m0 4v-4m0 4h-4m4 0h4m-4-4v-4" />
-                        </svg>
-                    </div>
-                `).join('');
+                if (data.code === 200) {
+                    displayPrayerTimes(data.data.timings);
+                } else {
+                    console.error("API error: ", data.status);
+                    alert("Failed to fetch prayer times.");
+                }
             })
             .catch(error => {
-                console.error('Error fetching prayer times:', error);
-                document.getElementById('prayer-times-container').innerHTML = '<p class="text-red-500">Failed to load prayer times.</p>';
+                console.error("Fetch error: ", error);
+                alert("An error occurred while fetching prayer times.");
             });
     }
+
+    // Function to display prayer times in the UI
+    function displayPrayerTimes(timings) {
+        const prayerTimesContainer = document.getElementById('prayer-times-container');
+        prayerTimesContainer.innerHTML = `
+            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M9.5 6.5C9.99153 5.9943 11.2998 4 12 4M14.5 6.5C14.0085 5.9943 12.7002 4 12 4M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18.3633 10.6357L16.9491 12.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M3 17H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M5.63657 10.6356L7.05078 12.0498" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M21 17H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M21 20H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M16 17C16 14.7909 14.2091 13 12 13C9.79086 13 8 14.7909 8 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="text-lg font-semibold">Fajr</span>
+                <span class="text-lg">${timings.Fajr}</span>
+            </div>
+            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M12 2V3.5M12 20.5V22M19.0708 19.0713L18.0101 18.0106M5.98926 5.98926L4.9286 4.9286M22 12H20.5M3.5 12H2M19.0713 4.92871L18.0106 5.98937M5.98975 18.0107L4.92909 19.0714" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="text-lg font-semibold">Dhuhr</span>
+                <span class="text-lg">${timings.Dhuhr}</span>
+            </div>
+            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M12 2V3.5M12 20.5V22M19.0708 19.0713L18.0101 18.0106M5.98926 5.98926L4.9286 4.9286M22 12H20.5M3.5 12H2M19.0713 4.92871L18.0106 5.98937M5.98975 18.0107L4.92909 19.0714" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="text-lg font-semibold">Asr</span>
+                <span class="text-lg">${timings.Asr}</span>
+            </div>
+            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M9.5 7.5C9.99153 8.0057 11.2998 10 12 10M14.5 7.5C14.0085 8.0057 12.7002 10 12 10M12 10V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18.3633 10.6357L16.9491 12.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M3 17H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M5.63657 10.6356L7.05078 12.0498" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M21 17H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M21 20H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M16 17C16 14.7909 14.2091 13 12 13C9.79086 13 8 14.7909 8 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="text-lg font-semibold">Maghrib</span>
+                <span class="text-lg">${timings.Maghrib}</span>
+            </div>
+            <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M21.5 14.5L18.5 11.5L21.5 8.5L21.5 14.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M21.5 14.5L18.5 11.5L21.5 8.5L21.5 14.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 12L8 16V4L12 8L16 4L20 8V16L12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="text-lg font-semibold">Isha</span>
+                <span class="text-lg">${timings.Isha}</span>
+            </div>
+        `;
+    }
+
+    // Call the function to get location and fetch prayer times
+    getLocation();
 });

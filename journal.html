@@ -29,47 +29,245 @@
 
         <!-- Tab Content -->
         <div id="tab-content" class="mt-4">
-            <!-- Daily Journal Content -->
-            <div id="daily-journal" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Daily Journal</h2>
-                <!-- Add content for the Daily Journal tab here -->
+<!-- Daily Journal Content -->
+<div id="daily-journal" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Daily Journal</h2>
+    
+    <!-- Journal Entry Form -->
+    <div class="mb-4">
+        <label for="journal-date" class="block text-gray-700 font-medium mb-2">Date:</label>
+        <input type="date" id="journal-date" class="border border-gray-300 p-2 rounded w-full mb-2">
+        
+        <label for="journal-mood" class="block text-gray-700 font-medium mb-2">Mood:</label>
+        <select id="journal-mood" class="border border-gray-300 p-2 rounded w-full mb-2">
+            <option value="">Select mood...</option>
+            <option value="happy">Happy</option>
+            <option value="neutral">Neutral</option>
+            <option value="sad">Sad</option>
+        </select>
+        
+        <label for="journal-entry" class="block text-gray-700 font-medium mb-2">Journal Entry:</label>
+        <textarea id="journal-entry" rows="6" class="border border-gray-300 p-2 rounded w-full" placeholder="Write your journal entry..."></textarea>
+        
+        <button id="save-journal-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none mt-2">Save Entry</button>
+    </div>
+    
+    <!-- Saved Journal Entries -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Saved Entries:</h3>
+        <div id="journal-entries" class="border border-gray-300 p-2 rounded">
+            <!-- Example entry -->
+            <div class="entry mb-2 p-2 border-b border-gray-200">
+                <h4 class="font-semibold mb-1">2024-08-20 (Happy)</h4>
+                <p>Today was a great day. I finished my tasks and had a wonderful time with family.</p>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Gratitude Content -->
-            <div id="gratitude" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Gratitude</h2>
-                <!-- Add content for the Gratitude tab here -->
-            </div>
 
-            <!-- Affirmations Content -->
-            <div id="affirmations" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Affirmations</h2>
-                <!-- Add content for the Affirmations tab here -->
-            </div>
 
-            <!-- Goals Content -->
-            <div id="goals" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Goals</h2>
-                <!-- Add content for the Goals tab here -->
-            </div>
+<!-- Gratitude Content -->
+<div id="gratitude" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Gratitude</h2>
+    
+    <!-- Gratitude Entry -->
+    <div class="mb-4">
+        <label for="gratitude-entry" class="block text-gray-700 font-medium mb-2">What are you grateful for today?</label>
+        <textarea id="gratitude-entry" rows="6" class="border border-gray-300 p-2 rounded w-full" placeholder="Write about the things you're grateful for today..."></textarea>
+    </div>
+    
+    <!-- Gratitude List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Gratitude List:</h3>
+        <ul id="gratitude-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li>Supportive family</li>
+            <li>Good health</li>
+            <li>Opportunities for growth</li>
+        </ul>
+    </div>
+    
+    <!-- Add Gratitude Item -->
+    <div>
+        <label for="add-gratitude-item" class="block text-gray-700 font-medium mb-2">Add a new gratitude item:</label>
+        <input type="text" id="add-gratitude-item" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Type a new gratitude item...">
+        <button id="add-item-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">Add</button>
+    </div>
+</div>
 
-            <!-- Reflections Content -->
-            <div id="reflections" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Reflections</h2>
-                <!-- Add content for the Reflections tab here -->
-            </div>
 
-            <!-- Ideas Content -->
-            <div id="ideas" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Ideas</h2>
-                <!-- Add content for the Ideas tab here -->
-            </div>
+<!-- Affirmations Content -->
+<div id="affirmations" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Affirmations</h2>
+    
+    <!-- Daily Affirmation -->
+    <div class="mb-4">
+        <label for="daily-affirmation" class="block text-gray-700 font-medium mb-2">Today's Affirmation:</label>
+        <textarea id="daily-affirmation" rows="4" class="border border-gray-300 p-2 rounded w-full" placeholder="Write your affirmation for today..."></textarea>
+    </div>
+    
+    <!-- Affirmation List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Affirmation List:</h3>
+        <ul id="affirmation-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li>I am confident and capable.</li>
+            <li>Every day is a new opportunity.</li>
+            <li>I am in control of my emotions.</li>
+        </ul>
+    </div>
+    
+    <!-- Add Affirmation -->
+    <div>
+        <label for="add-affirmation" class="block text-gray-700 font-medium mb-2">Add a new affirmation:</label>
+        <input type="text" id="add-affirmation" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Type a new affirmation...">
+        <button id="add-affirmation-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">Add</button>
+    </div>
+</div>
 
-            <!-- Notes Content -->
-            <div id="notes" class="tab-content hidden">
-                <h2 class="text-xl font-bold mb-2">Notes</h2>
-                <!-- Add content for the Notes tab here -->
-            </div>
+
+<!-- Goals Content -->
+<div id="goals" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Goals</h2>
+    
+    <!-- Set New Goal -->
+    <div class="mb-4">
+        <label for="new-goal" class="block text-gray-700 font-medium mb-2">Set a New Goal:</label>
+        <input type="text" id="new-goal" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Enter your new goal...">
+        <button id="add-goal-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">Add Goal</button>
+    </div>
+    
+    <!-- Goal List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">My Goals:</h3>
+        <ul id="goal-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li>Complete the project by the end of the month</li>
+            <li>Exercise for 30 minutes every day</li>
+            <li>Read 2 books this month</li>
+        </ul>
+    </div>
+    
+    <!-- Track Goal Progress -->
+    <div>
+        <h3 class="text-lg font-semibold mb-2">Track Goal Progress:</h3>
+        <label for="goal-progress" class="block text-gray-700 font-medium mb-2">Select Goal to Track:</label>
+        <select id="goal-progress" class="border border-gray-300 p-2 rounded w-full mb-4">
+            <!-- Options will be populated dynamically -->
+        </select>
+        
+        <label for="progress-update" class="block text-gray-700 font-medium mb-2">Update Progress:</label>
+        <input type="text" id="progress-update" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Enter your progress update...">
+        <button id="update-progress-button" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none">Update Progress</button>
+    </div>
+</div>
+
+
+<!-- Reflections Content -->
+<div id="reflections" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Reflections</h2>
+    
+    <!-- Daily Reflection -->
+    <div class="mb-4">
+        <label for="daily-reflection" class="block text-gray-700 font-medium mb-2">Today's Reflection:</label>
+        <textarea id="daily-reflection" rows="6" class="border border-gray-300 p-2 rounded w-full" placeholder="Reflect on your day or any specific topic..."></textarea>
+    </div>
+    
+    <!-- Reflection List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Previous Reflections:</h3>
+        <ul id="reflection-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li>Today was productive, I managed to complete all my tasks.</li>
+            <li>Reflecting on my interactions, I realized I need to improve my patience.</li>
+            <li>Grateful for the support I received from my team.</li>
+        </ul>
+    </div>
+    
+    <!-- Add Reflection -->
+    <div>
+        <label for="add-reflection" class="block text-gray-700 font-medium mb-2">Add a New Reflection:</label>
+        <input type="text" id="add-reflection" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Type a new reflection...">
+        <button id="add-reflection-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">Add Reflection</button>
+    </div>
+</div>
+
+
+<!-- Ideas Content -->
+<div id="ideas" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Ideas</h2>
+    
+    <!-- Add New Idea -->
+    <div class="mb-4">
+        <label for="new-idea" class="block text-gray-700 font-medium mb-2">Add a New Idea:</label>
+        <input type="text" id="new-idea" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Enter your new idea...">
+        <button id="add-idea-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">Add Idea</button>
+    </div>
+    
+    <!-- Idea List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">My Ideas:</h3>
+        <ul id="idea-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li>Create a new productivity app.</li>
+            <li>Explore mindfulness techniques.</li>
+            <li>Start a blog about personal development.</li>
+        </ul>
+    </div>
+    
+    <!-- Categorize Ideas -->
+    <div>
+        <h3 class="text-lg font-semibold mb-2">Categorize Your Ideas:</h3>
+        <label for="idea-category" class="block text-gray-700 font-medium mb-2">Select Category:</label>
+        <select id="idea-category" class="border border-gray-300 p-2 rounded w-full mb-4">
+            <option value="">Select a category...</option>
+            <option value="project">Project</option>
+            <option value="personal">Personal</option>
+            <option value="business">Business</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="category-idea" class="block text-gray-700 font-medium mb-2">Enter Idea for Selected Category:</label>
+        <input type="text" id="category-idea" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Type an idea...">
+        <button id="add-category-idea-button" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none">Add Idea to Category</button>
+    </div>
+</div>
+
+
+<!-- Notes Content -->
+<div id="notes" class="tab-content hidden">
+    <h2 class="text-xl font-bold mb-4">Notes</h2>
+    
+    <!-- Add New Note -->
+    <div class="mb-4">
+        <label for="new-note-title" class="block text-gray-700 font-medium mb-2">Note Title:</label>
+        <input type="text" id="new-note-title" class="border border-gray-300 p-2 rounded w-full mb-2" placeholder="Enter note title...">
+        
+        <label for="new-note-content" class="block text-gray-700 font-medium mb-2">Note Content:</label>
+        <textarea id="new-note-content" rows="4" class="border border-gray-300 p-2 rounded w-full" placeholder="Write your note content..."></textarea>
+        
+        <button id="add-note-button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none mt-2">Add Note</button>
+    </div>
+    
+    <!-- Notes List -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">My Notes:</h3>
+        <ul id="notes-list" class="list-disc list-inside border border-gray-300 p-2 rounded">
+            <!-- Example items -->
+            <li><strong>Meeting Notes:</strong> Discussed project milestones and deadlines.</li>
+            <li><strong>Shopping List:</strong> Milk, Eggs, Bread.</li>
+            <li><strong>Ideas:</strong> Research new marketing strategies.</li>
+        </ul>
+    </div>
+    
+    <!-- Search Notes -->
+    <div>
+        <label for="search-notes" class="block text-gray-700 font-medium mb-2">Search Notes:</label>
+        <input type="text" id="search-notes" class="border border-gray-300 p-2 rounded w-full mb-4" placeholder="Search notes...">
+    </div>
+</div>
+
         </div>
     </div>
 
@@ -78,5 +276,6 @@
 
     <!-- Scripts -->
     <script src="./script.js"></script>
+    <script src="./journal.js"></script>
 </body>
     </html>

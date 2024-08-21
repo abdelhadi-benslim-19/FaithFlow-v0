@@ -66,3 +66,5 @@ loadComponent('./components/navbar.html', 'navbar-placeholder');
             var countdownDisplay = document.getElementById('countdown');
             startCountdown(countdownDuration, countdownDisplay);
         };
+
+        
