@@ -18,7 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchPrayerTimes(position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        const apiUrl = `http://api.aladhan.com/v1/timingsByAddress/:date`;
+        const date = new Date().toISOString().split('T')[0]; // Current date in YYYY-MM-DD format
+
+        // Construct the API URL with the address parameters
+        const apiUrl = `http://api.aladhan.com/v1/timingsByAddress/${date}?latitude=${lat}&longitude=${lon}`;
 
         fetch(apiUrl)
             .then(response => response.json())
