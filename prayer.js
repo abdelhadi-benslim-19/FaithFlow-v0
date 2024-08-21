@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const lon = position.coords.longitude;
         const date = new Date().toISOString().split('T')[0]; // Current date in YYYY-MM-DD format
 
-        // Construct the API URL with the address parameters
-        const apiUrl = `http://api.aladhan.com/v1/timingsByAddress/${date}?latitude=${lat}&longitude=${lon}`;
+        // Update API URL if necessary; placeholder used here
+        const apiUrl = `http://api.aladhan.com/v1/timingsByAddress/${date}?latitude=${lat}&longitude=${lon}&method=2`;
 
         fetch(apiUrl)
             .then(response => response.json())
