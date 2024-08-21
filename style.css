@@ -132,20 +132,3 @@
         .calendar-table th {
             background-color: #f0f0f0;
         }
-
-        #hadith-content {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        #hadith-content h2 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        #hadith-content p {
-            margin-bottom: 0.5rem;
-        }
-        

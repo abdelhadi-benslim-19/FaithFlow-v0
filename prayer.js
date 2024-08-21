@@ -150,3 +150,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to fetch Hadiths from the new API
+    async function fetchHadiths() {
+        const url = 'https://hadith2.p.rapidapi.com/collection';
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '6cf4029601msh0aab7a805c12541p1b076cjsn79451d7a480c', // Replace with your RapidAPI key
+                'x-rapidapi-host': 'hadith2.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json(); // Parse response as JSON
+            displayHadiths(result);
+        } catch (error) {
+            console.error("Fetch error: ", error);
+            alert("An error occurred while fetching Hadiths.");
+        }
+    }
+
+    // Function to display Hadiths in the UI
+    function displayHadiths(data) {
+        const hadithContainer = document.getElementById('hadith-container');
+        hadithContainer.innerHTML = ''; // Clear any existing content
+
+        // Check if data has a structure to display
+        if (data && Array.isArray(data)) {
+            data.forEach(hadith => {
+                const hadithElement = document.createElement('div');
+                hadithElement.className = 'bg-white p-4 shadow rounded';
+                hadithElement.innerHTML = `
+                    <h3 class="text-lg font-semibold mb-1">${hadith.title || 'Hadith Title'}</h3>
+                    <p>${hadith.content || 'Hadith Content'}</p>
+                `;
+                hadithContainer.appendChild(hadithElement);
+            });
+        } else {
+            hadithContainer.innerHTML = '<p>No Hadiths available.</p>';
+        }
+    }
+
+    // Fetch Hadiths when the page loads
+    fetchHadiths();
+});

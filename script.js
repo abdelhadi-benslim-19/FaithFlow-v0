@@ -67,4 +67,3 @@ loadComponent('./components/navbar.html', 'navbar-placeholder');
             startCountdown(countdownDuration, countdownDisplay);
         };
 
-        

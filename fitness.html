@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Page</title>
     <link rel="shortcut icon" href="./images/faithflow-favicon-white.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -33,42 +33,133 @@
             <div id="workouts" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Workouts</h2>
                 <!-- Add content for the Workouts tab here -->
+                 
             </div>
 
             <!-- Nutrition Content -->
             <div id="nutrition" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Nutrition</h2>
                 <!-- Add content for the Nutrition tab here -->
+                     <!-- Nutrition Tracker Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add Nutrition Info</h3>
+        <form id="nutrition-form" class="flex flex-col space-y-2">
+            <input type="text" id="food-name" placeholder="Food Name" class="p-2 border rounded" required>
+            <input type="number" id="calories" placeholder="Calories" class="p-2 border rounded" required>
+            <input type="number" id="protein" placeholder="Protein (g)" class="p-2 border rounded" required>
+            <input type="number" id="carbs" placeholder="Carbs (g)" class="p-2 border rounded" required>
+            <input type="number" id="fat" placeholder="Fat (g)" class="p-2 border rounded" required>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Nutrition Info</button>
+        </form>
+        <ul id="nutrition-list" class="mt-4 list-disc pl-5">
+            <!-- List of user-added nutrition info will appear here -->
+        </ul>
+    </div>
             </div>
 
             <!-- Hydration Content -->
             <div id="hydration" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Hydration</h2>
                 <!-- Add content for the Hydration tab here -->
+                     <!-- Hydration Tracker Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add Hydration Info</h3>
+        <form id="hydration-form" class="flex flex-col space-y-2">
+            <input type="text" id="drink-name" placeholder="Drink Name" class="p-2 border rounded" required>
+            <input type="number" id="volume" placeholder="Volume (ml)" class="p-2 border rounded" required>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Hydration Info</button>
+        </form>
+        <ul id="hydration-list" class="mt-4 list-disc pl-5">
+            <!-- List of user-added hydration info will appear here -->
+        </ul>
+    </div>
             </div>
 
             <!-- Sleep Content -->
             <div id="sleep" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Sleep</h2>
                 <!-- Add content for the Sleep tab here -->
+                     <!-- Sleep Tracker Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add Sleep Record</h3>
+        <form id="sleep-form" class="flex flex-col space-y-2">
+            <input type="date" id="sleep-date" class="p-2 border rounded" required>
+            <input type="time" id="sleep-start" class="p-2 border rounded" required>
+            <input type="time" id="sleep-end" class="p-2 border rounded" required>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Sleep Record</button>
+        </form>
+        <ul id="sleep-list" class="mt-4 list-disc pl-5">
+            <!-- List of user-added sleep records will appear here -->
+        </ul>
+    </div>
             </div>
 
             <!-- Progress Tracking Content -->
             <div id="progress-tracking" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Progress Tracking</h2>
                 <!-- Add content for the Progress Tracking tab here -->
+                     <!-- Progress Tracker Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add Progress Record</h3>
+        <form id="progress-form" class="flex flex-col space-y-2">
+            <input type="date" id="progress-date" class="p-2 border rounded" required>
+            <input type="number" id="progress-weight" placeholder="Weight (kg)" class="p-2 border rounded" required>
+            <input type="number" id="progress-height" placeholder="Height (cm)" class="p-2 border rounded" required>
+            <textarea id="progress-notes" placeholder="Additional Notes" rows="4" class="p-2 border rounded"></textarea>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Progress Record</button>
+        </form>
+        <ul id="progress-list" class="mt-4 list-disc pl-5">
+            <!-- List of user-added progress records will appear here -->
+        </ul>
+    </div>
             </div>
 
             <!-- Challenges Content -->
             <div id="challenges" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Challenges</h2>
                 <!-- Add content for the Challenges tab here -->
+                     <!-- Available Challenges Section -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Available Challenges</h3>
+        <ul id="challenge-list" class="list-disc pl-5">
+            <!-- List of available challenges will appear here -->
+        </ul>
+    </div>
+
+    <!-- Add Challenge Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add New Challenge</h3>
+        <form id="challenge-form" class="flex flex-col space-y-2">
+            <input type="text" id="challenge-name" placeholder="Challenge Name" class="p-2 border rounded" required>
+            <textarea id="challenge-description" placeholder="Challenge Description" rows="4" class="p-2 border rounded" required></textarea>
+            <input type="date" id="challenge-start-date" class="p-2 border rounded" required>
+            <input type="date" id="challenge-end-date" class="p-2 border rounded" required>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Challenge</button>
+        </form>
+    </div>
             </div>
 
             <!-- Tips Content -->
             <div id="tips" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Tips</h2>
                 <!-- Add content for the Tips tab here -->
+                     <!-- Available Tips Section -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Available Tips</h3>
+        <ul id="tips-list" class="list-disc pl-5">
+            <!-- List of tips will appear here -->
+        </ul>
+    </div>
+
+    <!-- Add Tip Form -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">Add New Tip</h3>
+        <form id="tips-form" class="flex flex-col space-y-2">
+            <input type="text" id="tip-title" placeholder="Tip Title" class="p-2 border rounded" required>
+            <textarea id="tip-description" placeholder="Tip Description" rows="4" class="p-2 border rounded" required></textarea>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Tip</button>
+        </form>
+    </div>
             </div>
         </div>
     </div>
@@ -78,6 +169,7 @@
 
     <!-- Scripts -->
     <script src="./script.js"></script>
+    <script src="./fitness.js"></script>
     
 </body>
     </html>

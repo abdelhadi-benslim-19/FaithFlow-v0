@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prayer Page</title>
     <link rel="shortcut icon" href="./images/faithflow-favicon-white.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -134,8 +134,8 @@
             <div id="hadith" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Hadith</h2>
                 <!-- Hadith content goes here -->
-                <div id="hadith-content" class="p-4">
-                    <!-- Hadith content will be dynamically loaded here -->
+                <div id="hadith-container" class="space-y-4">
+                    <!-- Hadiths will be dynamically added here -->
                 </div>
             </div>
 
@@ -143,6 +143,41 @@
             <div id="islamic-resources" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Islamic Resources</h2>
                 <!-- Islamic Resources content goes here -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-black">Online Libraries</h3>
+                    <ul class="list-disc list-inside text-accent-color">
+                        <li><a href="https://www.quran.com" class="text-accent-color hover:text-secondary-color">Quran.com</a> - Read and listen to the Quran in various translations.</li>
+                        <li><a href="https://sunnah.com" class="text-accent-color hover:text-secondary-color">Sunnah.com</a> - A collection of Hadiths from various sources.</li>
+                        <li><a href="https://www.al-islam.org" class="text-accent-color hover:text-secondary-color">Al-Islam.org</a> - An extensive online library of Islamic texts and resources.</li>
+                    </ul>
+                </div>
+            
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-black">Recommended Books</h3>
+                    <ul class="list-disc list-inside text-accent-color">
+                        <li><a href="https://www.amazon.com/dp/1597841442" class="text-accent-color hover:text-secondary-color">The Sealed Nectar</a> - A detailed biography of the Prophet Muhammad (peace be upon him).</li>
+                        <li><a href="https://www.amazon.com/dp/0892591373" class="text-accent-color hover:text-secondary-color">Fortress of the Muslim</a> - A collection of daily supplications and prayers.</li>
+                        <li><a href="https://www.amazon.com/dp/0307472267" class="text-accent-color hover:text-secondary-color">Reclaim Your Heart</a> - A spiritual guide on self-improvement and personal growth.</li>
+                    </ul>
+                </div>
+            
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-black">Videos</h3>
+                    <ul class="list-disc list-inside text-accent-color">
+                        <li><a href="https://www.youtube.com/watch?v=9HVA12eQtYs" class="text-accent-color hover:text-secondary-color">The Life of the Prophet Muhammad</a> - A documentary series on the life of the Prophet.</li>
+                        <li><a href="https://www.youtube.com/watch?v=4PpMdTmVMpo" class="text-accent-color hover:text-secondary-color">The Hereafter</a> - A lecture on the Islamic perspective of the afterlife.</li>
+                        <li><a href="https://www.youtube.com/watch?v=Kw-r0tLju3w" class="text-accent-color hover:text-secondary-color">The Power of Dua</a> - Understanding the importance and power of supplication in Islam.</li>
+                    </ul>
+                </div>
+            
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-black">Articles</h3>
+                    <ul class="list-disc list-inside text-accent-color">
+                        <li><a href="https://www.islamicity.org/13301/the-purpose-of-life/" class="text-accent-color hover:text-secondary-color">The Purpose of Life in Islam</a> - An article discussing the purpose of life according to Islamic teachings.</li>
+                        <li><a href="https://www.whyislam.org/submission/the-importance-of-prayer/" class="text-accent-color hover:text-secondary-color">The Importance of Prayer in Islam</a> - An article on the significance of Salah in the life of a Muslim.</li>
+                        <li><a href="https://www.islamreligion.com/articles/204/importance-of-fasting/" class="text-accent-color hover:text-secondary-color">The Importance of Fasting</a> - Understanding the significance of fasting in Islam.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
