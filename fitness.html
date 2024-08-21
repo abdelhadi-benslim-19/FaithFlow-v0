@@ -3,26 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FaithFlow | Home</title>
+    <title>Fitness Page</title>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-      <!-- Placeholder for Header -->
-      <div id="header-placeholder"></div>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
-      <!-- Main Content -->
-      <div class="p-4">
-          <!-- Content goes here -->
-          <h1>Fitness Page</h1>
-      </div>
-  
-      <!-- Placeholder for Navbar -->
-      <div id="navbar-placeholder"></div>
+    <!-- Main Content -->
+    <div class="p-4">
+        <!-- Tabs Navigation -->
+        <div class="overflow-x-auto">
+            <div class="flex space-x-4 border-b border-gray-300">
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="workouts">Workouts</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="nutrition">Nutrition</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="hydration">Hydration</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="sleep">Sleep</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="progress-tracking">Progress Tracking</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="challenges">Challenges</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="tips">Tips</button>
+            </div>
+        </div>
 
+        <!-- Tab Content -->
+        <div id="tab-content" class="mt-4">
+            <!-- Workouts Content -->
+            <div id="workouts" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Workouts</h2>
+                <!-- Add content for the Workouts tab here -->
+            </div>
 
+            <!-- Nutrition Content -->
+            <div id="nutrition" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Nutrition</h2>
+                <!-- Add content for the Nutrition tab here -->
+            </div>
 
-      <script src="./script.js"></script>
+            <!-- Hydration Content -->
+            <div id="hydration" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Hydration</h2>
+                <!-- Add content for the Hydration tab here -->
+            </div>
+
+            <!-- Sleep Content -->
+            <div id="sleep" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Sleep</h2>
+                <!-- Add content for the Sleep tab here -->
+            </div>
+
+            <!-- Progress Tracking Content -->
+            <div id="progress-tracking" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Progress Tracking</h2>
+                <!-- Add content for the Progress Tracking tab here -->
+            </div>
+
+            <!-- Challenges Content -->
+            <div id="challenges" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Challenges</h2>
+                <!-- Add content for the Challenges tab here -->
+            </div>
+
+            <!-- Tips Content -->
+            <div id="tips" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Tips</h2>
+                <!-- Add content for the Tips tab here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Bottom Navbar) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
 </body>
-</html>
+    </html>
