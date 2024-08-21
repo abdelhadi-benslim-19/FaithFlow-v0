@@ -71,3 +71,82 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call the function to get location and fetch prayer times (simulated)
     getLocation();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dhikrContent = document.getElementById('dhikr-content');
+    const addDhikrButton = document.getElementById('add-dhikr');
+
+    const dhikrList = [
+        "SubhanAllah (سبحان الله) - Glory be to Allah",
+        "Alhamdulillah (الحمد لله) - All praise be to Allah",
+        "Allahu Akbar (الله أكبر) - Allah is the Greatest",
+        "La ilaha illallah (لا إله إلا الله) - There is no deity except Allah",
+        "Bismillah (بسم الله) - In the name of Allah",
+        "Astaghfirullah (أستغفر الله) - I seek forgiveness from Allah"
+    ];
+
+    function addDhikr(dhikr) {
+        const dhikrItem = document.createElement('div');
+        dhikrItem.className = 'dhikr-item';
+        dhikrItem.innerHTML = `
+            <span>${dhikr}</span>
+            <button class="bg-red-500 text-white p-1 rounded">Remove</button>
+        `;
+        dhikrItem.querySelector('button').addEventListener('click', () => {
+            dhikrItem.remove();
+        });
+        dhikrContent.appendChild(dhikrItem);
+    }
+
+    // Add initial Dhikr items
+    dhikrList.forEach(dhikr => addDhikr(dhikr));
+
+    // Add new Dhikr item
+    addDhikrButton.addEventListener('click', () => {
+        const newDhikr = prompt("Enter new Dhikr:");
+        if (newDhikr) {
+            addDhikr(newDhikr);
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const duaContent = document.getElementById('dua-content');
+    const addDuaButton = document.getElementById('add-dua');
+
+    const duaList = [
+        "اللهم اجعلني من الذين يستمعون القول فيتبعون أحسنه - O Allah, make me among those who listen to the word and follow the best of it.",
+        "اللهم إني أعوذ بك من الهم والحزن - O Allah, I seek refuge in You from worry and sadness.",
+        "ربنا لا تؤاخذنا إن نسينا أو أخطأنا - Our Lord, do not impose blame upon us if we have forgotten or made a mistake.",
+        "اللهم اغفر لي ولوالدي وللمؤمنين - O Allah, forgive me, my parents, and the believers.",
+        "اللهم ارزقني من حيث لا أحتسب - O Allah, grant me sustenance from where I do not expect.",
+        "اللهم صل على محمد وعلى آل محمد - O Allah, send blessings upon Muhammad and the family of Muhammad."
+    ];
+
+    function addDua(dua) {
+        const duaItem = document.createElement('div');
+        duaItem.className = 'dua-item';
+        duaItem.innerHTML = `
+            <span>${dua}</span>
+            <button>Remove</button>
+        `;
+        duaItem.querySelector('button').addEventListener('click', () => {
+            duaItem.remove();
+        });
+        duaContent.appendChild(duaItem);
+    }
+
+    // Add initial Dua items
+    duaList.forEach(dua => addDua(dua));
+
+    // Add new Dua item
+    addDuaButton.addEventListener('click', () => {
+        const newDua = prompt("Enter new Dua:");
+        if (newDua) {
+            addDua(newDua);
+        }
+    });
+});
+

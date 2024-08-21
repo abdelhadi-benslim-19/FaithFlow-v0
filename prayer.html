@@ -105,24 +105,38 @@
             <div id="dhikr" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Dhikr</h2>
                 <!-- Dhikr content goes here -->
+                <div id="dhikr-content" class="space-y-4">
+                    <!-- Dhikr items will be dynamically added here -->
+                </div>
+                <button id="add-dhikr" class="bg-blue-500 text-white p-2 rounded mt-4">Add New Dhikr</button>
             </div>
 
             <!-- Dua Content -->
             <div id="dua" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Dua</h2>
                 <!-- Dua content goes here -->
+                <div id="dua-content" class="space-y-4">
+                    <!-- Dua items will be dynamically added here -->
+                </div>
+                <button id="add-dua" class="bg-blue-500 text-white p-2 rounded mt-4">Add New Dua</button>
             </div>
 
             <!-- Islamic Calendar Content -->
             <div id="islamic-calendar" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Islamic Calendar</h2>
                 <!-- Islamic Calendar content goes here -->
+                <div id="calendar-container" class="border border-gray-300 p-4 rounded bg-white">
+                    <!-- Calendar will be dynamically added here -->
+                </div>
             </div>
 
             <!-- Hadith Content -->
             <div id="hadith" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Hadith</h2>
                 <!-- Hadith content goes here -->
+                <div id="hadith-content" class="p-4">
+                    <!-- Hadith content will be dynamically loaded here -->
+                </div>
             </div>
 
             <!-- Islamic Resources Content -->
@@ -138,5 +152,6 @@
 
     <script src="./script.js"></script>
     <script src="./prayer.js"></script>
+    <script src="./islamic-calendar.js"></script>
 </body>
 </html>

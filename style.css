@@ -77,3 +77,75 @@
             margin-left: 10px;
             cursor: pointer;
         }
+
+        .dhikr-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dhikr-item span {
+            font-size: 1.2rem;
+        }
+
+        .dua-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .dua-item span {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .dua-item button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .calendar-table th,
+        .calendar-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .calendar-table th {
+            background-color: #f0f0f0;
+        }
+
+        #hadith-content {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #hadith-content h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        #hadith-content p {
+            margin-bottom: 0.5rem;
+        }
+        
