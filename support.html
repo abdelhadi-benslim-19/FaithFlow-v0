@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - FaithFlow</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Help & Support Section -->
+    <section class="p-6 mb-20">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Help & Support</h1>
+
+        <!-- FAQ Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-blue-600">Frequently Asked Questions (FAQ)</h2>
+            <ul class="mt-4 space-y-4 text-gray-600">
+                <li><strong>How do I reset my password?</strong><br>You can reset your password by going to the account settings and clicking "Reset Password."</li>
+                <li><strong>How do I update my profile information?</strong><br>You can update your profile information in the account settings under "Edit Profile."</li>
+                <li><strong>How do I add a new widget?</strong><br>Navigate to the Widgets page and select the widget you want to add to your home screen.</li>
+                <li><strong>How do I track my daily prayers?</strong><br>Use the Prayer Tracker widget available on the Prayer page or the Widgets page.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Support Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-green-600">Contact Support</h2>
+            <p class="text-gray-600 mt-4">If you have any issues or need further assistance, feel free to reach out to our support team.</p>
+            <div class="mt-6">
+                <p class="text-gray-800"><strong>Email:</strong> support@faithflow.com</p>
+                <p class="text-gray-800"><strong>Phone:</strong> +123 456 7890</p>
+            </div>
+        </div>
+
+        <!-- Community Support Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-purple-600">Community Support</h2>
+            <p class="text-gray-600 mt-4">Join our community forum to connect with other FaithFlow users, share your experiences, and get help from the community.</p>
+            <button class="mt-6 bg-purple-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-purple-700 transition duration-300">Join Community</button>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold text-yellow-600">Send Us Your Feedback</h2>
+            <p class="text-gray-600 mt-4">We'd love to hear your thoughts! Send us your feedback to help us improve FaithFlow.</p>
+            <button class="mt-6 bg-yellow-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-yellow-700 transition duration-300">Send Feedback</button>
+        </div>
+    </section>
+
+    <!-- Support Bot -->
+    <div class="support-bot-container" id="supportBot">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Support Bot">
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">FaithFlow Support Bot</div>
+        <div class="chat-messages" id="chatMessages">
+            <p>Hello! How can I assist you today?</p>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendButton">&#10148;</button>
+        </div>
+    </div>
+
+    <!-- Footer (Bottom Navbar) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+    <script src="./support.js"></script>
+</body>
+</html>

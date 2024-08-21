@@ -1,0 +1,79 @@
+* {
+    src: url('/fonts/Arima\ Madurai.ttf');
+    font-family: 'Arima Madurai', cursive, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #8e8e8e #fff;
+  }
+       
+       /* Custom styles for the support bot */
+        .support-bot-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: #1a73e8;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .support-bot-container img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 155px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chat-input-container {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input-container input {
+            width: calc(100% - 50px);
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .chat-input-container button {
+            width: 40px;
+            height: 40px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }

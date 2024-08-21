@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - FaithFlow</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Settings Section -->
+    <section class="p-6 mb-20">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Settings</h1>
+
+        <!-- Account Settings -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-blue-600">Account Settings</h2>
+            <div class="mt-4">
+                <label class="block text-gray-600 mb-2">Email Address</label>
+                <input type="email" placeholder="you@example.com" class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:border-blue-600">
+            </div>
+            <div class="mt-4">
+                <label class="block text-gray-600 mb-2">Change Password</label>
+                <input type="password" placeholder="New Password" class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:border-blue-600">
+            </div>
+            <button class="mt-6 bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">Save Changes</button>
+        </div>
+
+        <!-- Notifications Settings -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-green-600">Notifications</h2>
+            <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-600">Prayer Time Notifications</span>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="form-checkbox text-green-600">
+                    <span class="ml-2">Enable</span>
+                </label>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-600">Habit Tracking Reminders</span>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="form-checkbox text-green-600">
+                    <span class="ml-2">Enable</span>
+                </label>
+            </div>
+            <button class="mt-6 bg-green-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-green-700 transition duration-300">Save Changes</button>
+        </div>
+
+        <!-- App Preferences -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold text-yellow-600">App Preferences</h2>
+            <div class="mt-4">
+                <label class="block text-gray-600 mb-2">Language</label>
+                <select class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:border-yellow-600">
+                    <option>English</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                </select>
+            </div>
+            <div class="mt-4">
+                <label class="block text-gray-600 mb-2">Theme</label>
+                <select class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:border-yellow-600">
+                    <option>Light</option>
+                    <option>Dark</option>
+                    <option>System Default</option>
+                </select>
+            </div>
+            <button class="mt-6 bg-yellow-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-yellow-700 transition duration-300">Save Changes</button>
+        </div>
+
+        <!-- Logout -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <button class="bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition duration-300">Log Out</button>
+        </div>
+    </section>
+
+    <!-- Footer (Bottom Navbar) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>
