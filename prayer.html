@@ -31,7 +31,7 @@
             <!-- Prayer Times Content -->
             <div id="prayer-times" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Prayer Times</h2>
-                <div id="prayer-times-container" class="space-y-4 mb-4">
+                <div id="prayer-times-container" class="space-y-4">
                     <!-- Prayer times will be dynamically inserted here -->
                     <div class="flex items-center justify-between bg-white p-4 shadow rounded">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,42 +69,94 @@
                         <span class="text-lg">08:00 PM</span>
                     </div>
                 </div>
+
+                <!-- Additional Section: Current Streak, Prayer Tracking, and Daily Calendar -->
+                <div class="mt-8 space-y-4">
+                    <!-- Current Streak -->
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 006 3.665V21h2v-2.335A4 4 0 1015 9V5a2 2 0 10-4 0v1" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Current streak</h3>
+                                <p class="text-sm text-gray-500">Your longest streak is 7 days</p>
+                                <p class="text-sm text-gray-500">2 days</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today's Prayer Tracking -->
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Today's prayer tracking</h3>
+                                <p class="text-sm text-gray-500">You've completed 1/5 so far</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Daily Calendar -->
+                    <div class="flex items-center justify-between bg-white p-4 shadow rounded">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3h8v4m-9 4h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2h-3V3a2 2 0 10-4 0v2H8V3a2 2 0 10-4 0v2a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Daily calendar</h3>
+                                <p class="text-sm text-gray-500">Add to your calendar</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
             </div>
 
             <!-- Quran Reader Content -->
             <div id="quran-reader" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Quran Reader</h2>
-                <p>Content for the Quran Reader goes here.</p>
+                <!-- Quran Reader content goes here -->
             </div>
 
             <!-- Dhikr Content -->
             <div id="dhikr" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Dhikr</h2>
-                <p>Content for Dhikr goes here.</p>
+                <!-- Dhikr content goes here -->
             </div>
 
             <!-- Dua Content -->
             <div id="dua" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Dua</h2>
-                <p>Content for Dua goes here.</p>
+                <!-- Dua content goes here -->
             </div>
 
             <!-- Islamic Calendar Content -->
             <div id="islamic-calendar" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Islamic Calendar</h2>
-                <p>Content for Islamic Calendar goes here.</p>
+                <!-- Islamic Calendar content goes here -->
             </div>
 
             <!-- Hadith Content -->
             <div id="hadith" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Hadith</h2>
-                <p>Content for Hadith goes here.</p>
+                <!-- Hadith content goes here -->
             </div>
 
             <!-- Islamic Resources Content -->
             <div id="islamic-resources" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Islamic Resources</h2>
-                <p>Content for Islamic Resources goes here.</p>
+                <!-- Islamic Resources content goes here -->
             </div>
         </div>
     </div>
@@ -112,8 +164,6 @@
     <!-- Bottom Navbar -->
     <div id="navbar-placeholder"></div>
 
-    <!-- Scripts -->
     <script src="./script.js"></script>
-   <!-- <script src="./prayer.js"></script> -->
 </body>
-    </html>
+                </html>
