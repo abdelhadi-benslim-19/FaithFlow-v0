@@ -3,26 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FaithFlow | Home</title>
+    <title>Journal Page</title>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-      <!-- Placeholder for Header -->
-      <div id="header-placeholder"></div>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
 
-      <!-- Main Content -->
-      <div class="p-4">
-          <!-- Content goes here -->
-          <h1>Journal Page</h1>
-      </div>
-  
-      <!-- Placeholder for Navbar -->
-      <div id="navbar-placeholder"></div>
+    <!-- Main Content -->
+    <div class="p-4">
+        <!-- Tabs Navigation -->
+        <div class="overflow-x-auto">
+            <div class="flex space-x-4 border-b border-gray-300">
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="daily-journal">Daily Journal</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="gratitude">Gratitude</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="affirmations">Affirmations</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="goals">Goals</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="reflections">Reflections</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="ideas">Ideas</button>
+                <button class="py-2 px-4 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="notes">Notes</button>
+            </div>
+        </div>
 
+        <!-- Tab Content -->
+        <div id="tab-content" class="mt-4">
+            <!-- Daily Journal Content -->
+            <div id="daily-journal" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Daily Journal</h2>
+                <!-- Add content for the Daily Journal tab here -->
+            </div>
 
+            <!-- Gratitude Content -->
+            <div id="gratitude" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Gratitude</h2>
+                <!-- Add content for the Gratitude tab here -->
+            </div>
 
-      <script src="./script.js"></script>
+            <!-- Affirmations Content -->
+            <div id="affirmations" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Affirmations</h2>
+                <!-- Add content for the Affirmations tab here -->
+            </div>
+
+            <!-- Goals Content -->
+            <div id="goals" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Goals</h2>
+                <!-- Add content for the Goals tab here -->
+            </div>
+
+            <!-- Reflections Content -->
+            <div id="reflections" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Reflections</h2>
+                <!-- Add content for the Reflections tab here -->
+            </div>
+
+            <!-- Ideas Content -->
+            <div id="ideas" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Ideas</h2>
+                <!-- Add content for the Ideas tab here -->
+            </div>
+
+            <!-- Notes Content -->
+            <div id="notes" class="tab-content hidden">
+                <h2 class="text-xl font-bold mb-2">Notes</h2>
+                <!-- Add content for the Notes tab here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Bottom Navbar) -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
 </body>
-</html>
+    </html>
