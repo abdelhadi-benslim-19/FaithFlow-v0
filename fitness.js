@@ -346,3 +346,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Variables to hold the selected drink type and amount
+let selectedDrink = "Water";
+let selectedAmount = 250;
+let totalIntake = 200;
+let intakeGoal = 2000;
+
+document.getElementById("addWaterButton").addEventListener("click", function() {
+    document.getElementById("waterModal").classList.remove("hidden");
+});
+
+document.getElementById("closeModal").addEventListener("click", function() {
+    document.getElementById("waterModal").classList.add("hidden");
+});
+
+// Handle drink option selection
+document.querySelectorAll(".drink-option").forEach(button => {
+    button.addEventListener("click", function() {
+        selectedDrink = this.getAttribute("data-drink");
+        console.log(`Selected drink: ${selectedDrink}`);
+    });
+});
+
+// Handle slider input
+document.getElementById("waterAmountSlider").addEventListener("input", function() {
+    selectedAmount = this.value;
+    document.getElementById("amountDisplay").textContent = `${selectedAmount} ml`;
+});
+
+// Add drink to total intake
+document.getElementById("addDrinkButton").addEventListener("click", function() {
+    totalIntake += parseInt(selectedAmount);
+    let remaining = intakeGoal - totalIntake;
+
+    document.getElementById("remainingAmount").textContent = `${selectedAmount}ml`;
+    document.getElementById("totalRemaining").textContent = `${remaining}ml remaining`;
+
+    // Adjust water level height in bottle graphic
+    let waterLevelHeight = (totalIntake / intakeGoal) * 100;
+    document.getElementById("waterLevel").style.height = `${waterLevelHeight}%`;
+
+    document.getElementById("waterModal").classList.add("hidden");
+});

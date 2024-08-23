@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
             
                     <!-- Food Items -->
                     <div class="grid grid-cols-2 gap-4">
@@ -127,9 +127,6 @@
                             </div>
                             <div>Add Item</div>
                         </div>
-            
-            <!-- List of user-added nutrition info will appear here -->
-        </ul>
     </div>
             </div>
 
@@ -137,17 +134,63 @@
             <div id="hydration" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Hydration</h2>
                 <!-- Add content for the Hydration tab here -->
-                     <!-- Hydration Tracker Form -->
-    <div class="mb-4">
-        <h3 class="text-lg font-semibold mb-2">Add Hydration Info</h3>
-        <form id="hydration-form" class="flex flex-col space-y-2">
-            <input type="text" id="drink-name" placeholder="Drink Name" class="p-2 border rounded" required>
-            <input type="number" id="volume" placeholder="Volume (ml)" class="p-2 border rounded" required>
-            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Hydration Info</button>
-        </form>
-        <ul id="hydration-list" class="mt-4 list-disc pl-5">
-            <!-- List of user-added hydration info will appear here -->
-        </ul>
+                <div class="flex flex-col items-center bg-blue-50 h-screen p-4">
+                    <!-- Header and other content -->
+
+                    <p class="text-gray-500 mt-1">Track your water intake</p>
+                    
+                    <!-- Water Bottle Graphic -->
+                    <div class="relative mt-6">
+                        <div id="bottleGraphic" class="w-40 h-80 bg-blue-100 rounded-full flex items-center justify-center">
+                            <div id="waterLevel" class="absolute bottom-4 w-32 h-60 bg-blue-300 rounded-full"></div>
+                            <p id="remainingAmount" class="absolute text-lg font-bold text-gray-600">200ml</p>
+                            <p id="totalRemaining" class="absolute bottom-4 text-sm text-gray-500">1800ml remaining</p>
+                        </div>
+                        <button id="addWaterButton" class="absolute bottom-4 right-4 w-8 h-8 bg-blue-400 text-white rounded-full text-lg">+</button>
+                    </div>
+                
+                    <!-- Modal (Initially Hidden) -->
+                    <div id="waterModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                        <div class="bg-white rounded-lg p-4 w-3/4">
+                            <!-- Close Button -->
+                            <div class="flex justify-between">
+                                <h2 class="text-lg font-semibold">What did you drink?</h2>
+                                <button id="closeModal" class="text-gray-500 text-2xl">&times;</button>
+                            </div>
+                            
+                            <!-- Drink Types -->
+                            <div id="drinkOptions" class="flex justify-around mt-4">
+                                <button class="drink-option flex flex-col items-center" data-drink="Water">
+                                    <img src="water_icon_url" alt="Water" class="w-8 h-8">
+                                    <p class="text-sm mt-1">Water</p>
+                                </button>
+                                <button class="drink-option flex flex-col items-center" data-drink="Coke">
+                                    <img src="coke_icon_url" alt="Coke" class="w-8 h-8">
+                                    <p class="text-sm mt-1">Coke</p>
+                                </button>
+                                <button class="drink-option flex flex-col items-center" data-drink="Coffee">
+                                    <img src="coffee_icon_url" alt="Coffee" class="w-8 h-8">
+                                    <p class="text-sm mt-1">Coffee</p>
+                                </button>
+                                <button class="drink-option flex flex-col items-center" data-drink="Juice">
+                                    <img src="juice_icon_url" alt="Juice" class="w-8 h-8">
+                                    <p class="text-sm mt-1">Juice</p>
+                                </button>
+                            </div>
+                
+                            <!-- Amount Slider -->
+                            <div class="mt-6">
+                                <p class="text-gray-700 text-center">How much did you drink?</p>
+                                <input id="waterAmountSlider" type="range" min="0" max="1000" value="250" class="w-full mt-2">
+                                <p id="amountDisplay" class="text-center text-lg font-semibold mt-2">250 ml</p>
+                            </div>
+                
+                            <!-- Add Button -->
+                            <button id="addDrinkButton" class="w-full bg-blue-400 text-white font-bold py-2 rounded-lg mt-4">ADD</button>
+                        </div>
+                    </div>
+                </div>
+                
     </div>
             </div>
 
