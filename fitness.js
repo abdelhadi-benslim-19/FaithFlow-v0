@@ -1,77 +1,47 @@
-// workouts.js
+// Function to load workouts
+const workouts = {
+    gym: [
+        { name: "Bench Press", details: "3 sets of 10 reps" },
+        { name: "Squats", details: "4 sets of 8 reps" },
+        // Add more gym workouts
+    ],
+    running: [
+        { name: "5K Run", details: "Maintain a steady pace" },
+        { name: "Interval Sprints", details: "5x 1-minute sprints with 2 minutes rest" },
+        // Add more running workouts
+    ]
+};
 
-// Sample workout data
-const workoutsData = [
-    {
-        title: "Full Body Workout",
-        description: "A comprehensive workout targeting all major muscle groups.",
-        exercises: [
-            "Push-ups",
-            "Squats",
-            "Lunges",
-            "Plank",
-            "Jumping Jacks"
-        ]
-    },
-    {
-        title: "Upper Body Strength",
-        description: "Focus on building strength in your upper body.",
-        exercises: [
-            "Pull-ups",
-            "Bicep Curls",
-            "Tricep Dips",
-            "Shoulder Press",
-            "Chest Press"
-        ]
-    },
-    {
-        title: "Lower Body Blast",
-        description: "Strengthen and tone your lower body with these exercises.",
-        exercises: [
-            "Deadlifts",
-            "Leg Press",
-            "Calf Raises",
-            "Glute Bridges",
-            "Leg Extensions"
-        ]
-    }
-];
+function displayWorkouts() {
+    const container = document.getElementById('workouts-container');
+    
+    for (const [category, exercises] of Object.entries(workouts)) {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'workout-category mb-8';
+        
+        const categoryTitle = document.createElement('h2');
+        categoryTitle.className = 'text-2xl font-bold text-[#013C38] mb-4';
+        categoryTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1) + ' Workouts';
+        categoryDiv.appendChild(categoryTitle);
 
-// Function to generate workout content dynamically
-function loadWorkouts() {
-    const workoutsContainer = document.getElementById('workouts');
-    workoutsContainer.innerHTML = ""; // Clear any existing content
+        const workoutList = document.createElement('div');
+        workoutList.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6';
 
-    workoutsData.forEach(workout => {
-        const workoutDiv = document.createElement('div');
-        workoutDiv.classList.add('workout');
+        exercises.forEach(exercise => {
+            const workoutItem = document.createElement('div');
+            workoutItem.className = 'workout-item bg-white p-6 rounded-lg shadow-lg text-center';
 
-        const title = document.createElement('h3');
-        title.classList.add('text-lg', 'font-bold', 'mb-2');
-        title.textContent = workout.title;
-
-        const description = document.createElement('p');
-        description.classList.add('mb-2');
-        description.textContent = workout.description;
-
-        const exercisesList = document.createElement('ul');
-        exercisesList.classList.add('list-disc', 'ml-4');
-
-        workout.exercises.forEach(exercise => {
-            const listItem = document.createElement('li');
-            listItem.textContent = exercise;
-            exercisesList.appendChild(listItem);
+            workoutItem.innerHTML = `<h3 class="text-xl font-semibold text-[#D6DF36] mb-2">${exercise.name}</h3><p class="text-md text-[#013C38]">${exercise.details}</p>`;
+            workoutList.appendChild(workoutItem);
         });
 
-        workoutDiv.appendChild(title);
-        workoutDiv.appendChild(description);
-        workoutDiv.appendChild(exercisesList);
-        workoutsContainer.appendChild(workoutDiv);
-    });
+        categoryDiv.appendChild(workoutList);
+        container.appendChild(categoryDiv);
+    }
 }
 
-// Run the function to load workouts when the page loads
-document.addEventListener('DOMContentLoaded', loadWorkouts);
+document.addEventListener('DOMContentLoaded', displayWorkouts);
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const nutritionForm = document.getElementById('nutrition-form');

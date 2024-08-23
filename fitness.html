@@ -33,6 +33,37 @@
             <div id="workouts" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Workouts</h2>
                 <!-- Add content for the Workouts tab here -->
+                <div class="workout-category mb-8">
+                    <h2 class="text-2xl font-bold text-[#013C38] mb-4">Gym Workouts</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Each workout item -->
+                        <div class="workout-item bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h3 class="text-xl font-semibold text-[#D6DF36] mb-2">Bench Press</h3>
+                            <p class="text-md text-[#013C38]">3 sets of 10 reps</p>
+                        </div>
+                        <div class="workout-item bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h3 class="text-xl font-semibold text-[#D6DF36] mb-2">Squats</h3>
+                            <p class="text-md text-[#013C38]">4 sets of 8 reps</p>
+                        </div>
+                        <!-- Add more gym workouts -->
+                    </div>
+                </div>
+            
+                <div class="workout-category mb-8">
+                    <h2 class="text-2xl font-bold text-[#013C38] mb-4">Running Workouts</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="workout-item bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h3 class="text-xl font-semibold text-[#D6DF36] mb-2">5K Run</h3>
+                            <p class="text-md text-[#013C38]">Maintain a steady pace</p>
+                        </div>
+                        <div class="workout-item bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h3 class="text-xl font-semibold text-[#D6DF36] mb-2">Interval Sprints</h3>
+                            <p class="text-md text-[#013C38]">5x 1-minute sprints with 2 minutes rest</p>
+                        </div>
+                        <!-- Add more running workouts -->
+                    </div>
+                </div>
+            
                  
             </div>
 
@@ -41,17 +72,61 @@
                 <h2 class="text-xl font-bold mb-2">Nutrition</h2>
                 <!-- Add content for the Nutrition tab here -->
                      <!-- Nutrition Tracker Form -->
-    <div class="mb-4">
-        <h3 class="text-lg font-semibold mb-2">Add Nutrition Info</h3>
-        <form id="nutrition-form" class="flex flex-col space-y-2">
-            <input type="text" id="food-name" placeholder="Food Name" class="p-2 border rounded" required>
-            <input type="number" id="calories" placeholder="Calories" class="p-2 border rounded" required>
-            <input type="number" id="protein" placeholder="Protein (g)" class="p-2 border rounded" required>
-            <input type="number" id="carbs" placeholder="Carbs (g)" class="p-2 border rounded" required>
-            <input type="number" id="fat" placeholder="Fat (g)" class="p-2 border rounded" required>
-            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Nutrition Info</button>
-        </form>
-        <ul id="nutrition-list" class="mt-4 list-disc pl-5">
+                     <div class="text-center text-white mb-4">
+                        <span class="bg-teal-700 py-1 px-4 rounded-lg">Friday 1 November</span>
+                    </div>
+            
+                    <!-- Calorie Summary -->
+                    <div class="bg-teal-700 rounded-lg p-4 text-white mb-6">
+                        <div class="text-center text-3xl font-bold">1769</div>
+                        <div class="text-center text-sm">of 2100 kcal</div>
+                        <div class="flex justify-between mt-4">
+                            <div>
+                                <div class="text-xs">Carbs</div>
+                                <div class="text-sm">78/100g</div>
+                            </div>
+                            <div>
+                                <div class="text-xs">Proteins</div>
+                                <div class="text-sm">22/75g</div>
+                            </div>
+                            <div>
+                                <div class="text-xs">Fat</div>
+                                <div class="text-sm">31/40g</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Food Items -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+                                <!-- Food icon here -->
+                                <span>☕</span>
+                            </div>
+                            <div>540 kcal</div>
+                        </div>
+                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+                                <!-- Food icon here -->
+                                <span>🥣</span>
+                            </div>
+                            <div>601 kcal</div>
+                        </div>
+                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+                                <!-- Food icon here -->
+                                <span>🍲</span>
+                            </div>
+                            <div>628 kcal</div>
+                        </div>
+                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+                                <!-- Add icon here -->
+                                <span>➕</span>
+                            </div>
+                            <div>Add Item</div>
+                        </div>
+            
             <!-- List of user-added nutrition info will appear here -->
         </ul>
     </div>
