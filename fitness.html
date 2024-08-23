@@ -198,18 +198,114 @@
             <div id="sleep" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Sleep</h2>
                 <!-- Add content for the Sleep tab here -->
-                     <!-- Sleep Tracker Form -->
-    <div class="mb-4">
-        <h3 class="text-lg font-semibold mb-2">Add Sleep Record</h3>
-        <form id="sleep-form" class="flex flex-col space-y-2">
-            <input type="date" id="sleep-date" class="p-2 border rounded" required>
-            <input type="time" id="sleep-start" class="p-2 border rounded" required>
-            <input type="time" id="sleep-end" class="p-2 border rounded" required>
-            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Sleep Record</button>
-        </form>
-        <ul id="sleep-list" class="mt-4 list-disc pl-5">
-            <!-- List of user-added sleep records will appear here -->
-        </ul>
+                    <!-- Sleep Duration Section -->
+    <div class="min-h-screen p-4 flex flex-col items-center justify-center bg-green-100">
+        <h1 class="text-4xl font-bold">You Slept for <span class="text-brown-600">8.25 h</span></h1>
+
+        <!-- Circular Graph -->
+        <div class="relative w-56 h-56 mt-6">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <!-- Background circles (to simulate a circular chart) -->
+                <div class="w-40 h-40 bg-gray-200 rounded-full"></div>
+                <div class="w-32 h-32 bg-green-400 rounded-full"></div>
+                <div class="w-24 h-24 bg-orange-400 rounded-full"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center text-center">
+                <p class="text-2xl font-bold">REM<br>2.14h</p>
+            </div>
+        </div>
+
+        <div class="flex mt-6 space-x-8">
+            <div class="text-center">
+                <p class="text-lg font-semibold">REM</p>
+                <p class="text-xl font-bold">2.14h</p>
+            </div>
+            <div class="text-center">
+                <p class="text-lg font-semibold">Core</p>
+                <p class="text-xl font-bold">6.04h</p>
+            </div>
+            <div class="text-center">
+                <p class="text-lg font-semibold">Post</p>
+                <p class="text-xl font-bold">12min</p>
+            </div>
+        </div>
+
+        <button class="mt-8 px-8 py-2 bg-brown-600 text-white rounded-full">Got it, Thanks!</button>
+    </div>
+
+    <!-- Sleep Quality Section -->
+    <div class="min-h-screen p-4 flex flex-col items-center justify-center bg-green-200">
+        <h1 class="text-4xl font-bold">Sleep Quality</h1>
+        <p class="text-lg font-semibold mt-2">87% better from last month.</p>
+
+        <!-- Pie Chart Graphic -->
+        <div class="relative w-56 h-56 mt-6">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <!-- Example pie chart graphic -->
+                <div class="w-48 h-48 bg-white rounded-full"></div>
+                <div class="absolute w-32 h-32 bg-orange-400 rounded-full" style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+                <div class="absolute w-32 h-32 bg-green-400 rounded-full" style="clip-path: polygon(0% 50%, 50% 100%, 0% 100%);"></div>
+                <div class="absolute w-32 h-32 bg-yellow-400 rounded-full" style="clip-path: polygon(50% 0%, 100% 50%, 50% 50%, 0% 50%);"></div>
+            </div>
+        </div>
+
+        <button class="mt-8 px-8 py-2 bg-brown-600 text-white rounded-full">Settings</button>
+    </div>
+
+    <!-- Sleep Insights Section -->
+    <div class="min-h-screen p-4 flex flex-col items-center justify-center bg-green-300">
+        <h1 class="text-4xl font-bold">Sleep Insights</h1>
+
+        <!-- Tabs -->
+        <div class="mt-6 w-full flex justify-center">
+            <button class="px-4 py-2 bg-green-500 text-white rounded-l-full tab-button" data-period="today">Today</button>
+            <button class="px-4 py-2 bg-green-400 text-white tab-button" data-period="week">1 Week</button>
+            <button class="px-4 py-2 bg-green-400 text-white tab-button" data-period="month">1 Month</button>
+            <button class="px-4 py-2 bg-green-400 text-white tab-button" data-period="year">1 Year</button>
+            <button class="px-4 py-2 bg-green-400 text-white rounded-r-full tab-button" data-period="all">All</button>
+        </div>
+
+        <!-- Bar Chart (Simplified for example) -->
+        <div class="mt-8 w-full max-w-lg">
+            <div id="chart-core" class="flex justify-between text-sm font-semibold">
+                <p>Core</p>
+                <div class="w-full bg-gray-200 h-4 ml-4">
+                    <div class="bg-green-600 h-4 rounded-full" style="width: 66%;"></div>
+                </div>
+            </div>
+            <div id="chart-rem" class="mt-4 flex justify-between text-sm font-semibold">
+                <p>REM</p>
+                <div class="w-full bg-gray-200 h-4 ml-4">
+                    <div class="bg-orange-400 h-4 rounded-full" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div id="chart-post-rem" class="mt-4 flex justify-between text-sm font-semibold">
+                <p>Post-REM</p>
+                <div class="w-full bg-gray-200 h-4 ml-4">
+                    <div class="bg-yellow-400 h-4 rounded-full" style="width: 33%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Suggestions -->
+        <div class="mt-10 w-full max-w-lg bg-white p-4 rounded-lg">
+            <h2 class="text-lg font-bold mb-4">AI Suggestions</h2>
+            <div class="space-y-2">
+                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
+                    <p>Loud Snoring</p>
+                    <p class="text-sm text-gray-500">at 03:00 AM</p>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
+                    <p>Pillow Improvement</p>
+                    <p class="text-sm text-gray-500">Change your pillows</p>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
+                    <p>Temperature Adjustment</p>
+                    <p class="text-sm text-gray-500">Lower the temperature</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
             </div>
 

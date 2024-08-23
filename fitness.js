@@ -389,3 +389,32 @@ document.getElementById("addDrinkButton").addEventListener("click", function() {
 
     document.getElementById("waterModal").classList.add("hidden");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const coreChart = document.getElementById("chart-core").querySelector(".bg-green-600");
+    const remChart = document.getElementById("chart-rem").querySelector(".bg-orange-400");
+    const postRemChart = document.getElementById("chart-post-rem").querySelector(".bg-yellow-400");
+
+    const chartData = {
+        today: { core: '66%', rem: '50%', postRem: '33%' },
+        week: { core: '70%', rem: '55%', postRem: '40%' },
+        month: { core: '75%', rem: '60%', postRem: '45%' },
+        year: { core: '80%', rem: '65%', postRem: '50%' },
+        all: { core: '85%', rem: '70%', postRem: '60%' },
+    };
+
+    tabButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Update active button
+            tabButtons.forEach(btn => btn.classList.remove("bg-green-500"));
+            button.classList.add("bg-green-500");
+
+            // Update chart based on selected period
+            const period = button.dataset.period;
+            coreChart.style.width = chartData[period].core;
+            remChart.style.width = chartData[period].rem;
+            postRemChart.style.width = chartData[period].postRem;
+        });
+    });
+});
