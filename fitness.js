@@ -42,7 +42,6 @@ function displayWorkouts() {
 
 document.addEventListener('DOMContentLoaded', displayWorkouts);
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const nutritionForm = document.getElementById('nutrition-form');
     const nutritionList = document.getElementById('nutrition-list');
