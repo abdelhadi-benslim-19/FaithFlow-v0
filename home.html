@@ -14,48 +14,47 @@
 
     <!-- Main Content -->
     <div class="p-4 mb-20">
-        <div class="flex justify-between items-center">
-            <h2 class="text-xl font-bold">Welcome Back!</h2>
-            <!-- Weather Widget -->
-            <div class="flex items-center space-x-2 bg-blue-100 p-2 rounded">
-                <div class="text-blue-500">
-                    <!-- Weather Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                        <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke="currentColor" stroke-width="1.5" />
-                        <path d="M12 2V3.5M12 20.5V22M19.0708 19.0713L18.0101 18.0106M5.98926 5.98926L4.9286 4.9286M22 12H20.5M3.5 12H2M19.0713 4.92871L18.0106 5.98937M5.98975 18.0107L4.92909 19.0714" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="text-sm text-blue-600">23°C</p>
-                    <p class="text-xs text-gray-500">Sunny</p>
-                </div>
+    <!-- Widgets Section -->
+    <section class="p-4 space-y-4">
+        <!-- Weather Widget -->
+        <div class="bg-primary p-4 rounded-lg">
+            <div class="tomorrow"
+                data-location-id=""
+                data-language="EN"
+                data-unit-system="METRIC"
+                data-skin="light"
+                data-widget-type="upcoming"
+                style="padding-bottom:22px;position:relative;">
             </div>
-        </div>
 
-        <!-- Countdown Timer -->
-        <div class="mt-4 bg-green-100 p-4 rounded shadow text-center">
-            <h3 class="text-lg font-semibold text-green-700">Next Prayer: Dhuhr</h3>
-            <p class="text-2xl font-bold text-green-800" id="countdown">00:45:30</p>
-        </div>
+                <!-- Next Prayer Widget -->
+                <div class="bg-white p-4 rounded-lg text-center mt-4">
+                    <h3 class="text-xl font-semibold mb-2">Next Prayer</h3>
+                    <p class="text-lg font-medium">Asr</p>
+                    <p class="text-sm">Time Left: 2h 15m</p>
+                </div>
 
-        <!-- Main Widgets Section -->
-        <div class="mt-6 space-y-4">
-            <!-- Widget 1 -->
-            <div class="bg-white p-4 rounded shadow">
-                <h3 class="text-lg font-semibold">Today's Summary</h3>
-                <p class="text-gray-600">You’ve completed 3 out of 5 tasks today.</p>
-            </div>
-            <!-- Widget 2 -->
-            <div class="bg-white p-4 rounded shadow">
-                <h3 class="text-lg font-semibold">Latest Journal Entry</h3>
-                <p class="text-gray-600">Reflect on today’s accomplishments and challenges.</p>
-            </div>
-            <!-- Widget 3 -->
-            <div class="bg-white p-4 rounded shadow">
-                <h3 class="text-lg font-semibold">Fitness Progress</h3>
-                <p class="text-gray-600">You’ve achieved 60% of your fitness goal for the week.</p>
-            </div>
         </div>
+    </section>
+
+    <!-- Prayer Progress Tracker -->
+    <section class="p-4">
+        <div class="bg-white p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2">Prayer Progress</h3>
+            <p>Prayers in a Row: 5</p>
+            <p>Missed Prayers: 1</p>
+        </div>
+    </section>
+
+    <!-- Fitness Progress Tracker -->
+    <section class="p-4">
+        <div class="bg-white p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2">Fitness Progress</h3>
+            <p>Consistent: Yes</p>
+            <p>Workouts Completed: 3/5</p>
+        </div>
+    </section>
+
     </div>
 
     <!-- Footer (Bottom Navbar) -->

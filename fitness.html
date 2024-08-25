@@ -71,63 +71,80 @@
             <div id="nutrition" class="tab-content hidden">
                 <h2 class="text-xl font-bold mb-2">Nutrition</h2>
                 <!-- Add content for the Nutrition tab here -->
-                     <!-- Nutrition Tracker Form -->
-                     <div class="text-center text-white mb-4">
-                        <span class="bg-teal-700 py-1 px-4 rounded-lg">Friday 1 November</span>
-                    </div>
-            
-                    <!-- Calorie Summary -->
-                    <div class="bg-teal-700 rounded-lg p-4 text-white mb-6">
-                        <div class="text-center text-3xl font-bold">1769</div>
-                        <div class="text-center text-sm">of 2100 kcal</div>
-                        <div class="flex justify-between mt-4">
-                            <div>
-                                <div class="text-xs">Carbs</div>
-                                <div class="text-sm">78/100g</div>
-                            </div>
-                            <div>
-                                <div class="text-xs">Proteins</div>
-                                <div class="text-sm">22/75g</div>
-                            </div>
-                            <div>
-                                <div class="text-xs">Fat</div>
-                                <div class="text-sm">31/40g</div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Nutrition Tracker Form -->
+<div class="text-center text-white mb-4">
+    <span class="bg-teal-700 py-1 px-4 rounded-lg">Friday 1 November</span>
+</div>
 
-            
-                    <!-- Food Items -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
-                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
-                                <!-- Food icon here -->
-                                <span>☕</span>
-                            </div>
-                            <div>540 kcal</div>
-                        </div>
-                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
-                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
-                                <!-- Food icon here -->
-                                <span>🥣</span>
-                            </div>
-                            <div>601 kcal</div>
-                        </div>
-                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
-                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
-                                <!-- Food icon here -->
-                                <span>🍲</span>
-                            </div>
-                            <div>628 kcal</div>
-                        </div>
-                        <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
-                            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
-                                <!-- Add icon here -->
-                                <span>➕</span>
-                            </div>
-                            <div>Add Item</div>
-                        </div>
+<!-- Calorie Summary -->
+<div class="bg-teal-700 rounded-lg p-4 text-white mb-6">
+    <div class="text-center text-3xl font-bold">1769</div>
+    <div class="text-center text-sm">of 2100 kcal</div>
+    <div class="flex justify-between mt-4">
+        <div>
+            <div class="text-xs">Carbs</div>
+            <div class="text-sm">78/100g</div>
+        </div>
+        <div>
+            <div class="text-xs">Proteins</div>
+            <div class="text-sm">22/75g</div>
+        </div>
+        <div>
+            <div class="text-xs">Fat</div>
+            <div class="text-sm">31/40g</div>
+        </div>
     </div>
+</div>
+
+<!-- Food Items -->
+<div class="grid grid-cols-2 gap-4">
+    <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+        <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+            <!-- Food icon here -->
+            <span>☕</span>
+        </div>
+        <div>540 kcal</div>
+    </div>
+    <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+        <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+            <!-- Food icon here -->
+            <span>🥣</span>
+        </div>
+        <div>601 kcal</div>
+    </div>
+    <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white">
+        <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+            <!-- Food icon here -->
+            <span>🍲</span>
+        </div>
+        <div>628 kcal</div>
+    </div>
+    <div class="bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white add-item">
+        <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+            <!-- Add icon here -->
+            <span>➕</span>
+        </div>
+        <div>Add Item</div>
+    </div>
+</div>
+
+<!-- Add Item Modal -->
+<div id="addItemModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white rounded-lg p-6 w-80">
+        <h2 class="text-2xl font-bold mb-4">Add Food Item</h2>
+        <div class="mb-4">
+            <label class="block text-gray-700">Food Name</label>
+            <input type="text" id="foodName" class="w-full border rounded p-2">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Calories</label>
+            <input type="number" id="foodCalories" class="w-full border rounded p-2">
+        </div>
+        <button id="saveItem" class="bg-teal-700 text-white py-2 px-4 rounded-lg">Save</button>
+        <button id="closeModal" class="bg-gray-500 text-white py-2 px-4 rounded-lg ml-2">Cancel</button>
+    </div>
+</div>
+
             </div>
 
             <!-- Hydration Content -->

@@ -418,3 +418,55 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addItemButton = document.querySelector('.add-item');
+    const addItemModal = document.getElementById('addItemModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const saveItemButton = document.getElementById('saveItem');
+    const foodNameInput = document.getElementById('foodName');
+    const foodCaloriesInput = document.getElementById('foodCalories');
+
+    // Function to clear input fields
+    function clearInputs() {
+        foodNameInput.value = '';
+        foodCaloriesInput.value = '';
+    }
+
+    // Open the modal and clear inputs
+    addItemButton.addEventListener('click', () => {
+        clearInputs();  // Clear inputs when opening the modal
+        addItemModal.classList.remove('hidden');
+    });
+
+    // Close the modal
+    closeModalButton.addEventListener('click', () => {
+        clearInputs();  // Clear inputs when closing the modal
+        addItemModal.classList.add('hidden');
+    });
+
+    // Save the item and add a new card
+    saveItemButton.addEventListener('click', () => {
+        const foodName = foodNameInput.value;
+        const foodCalories = foodCaloriesInput.value;
+
+        // Create a new food card
+        const newCard = document.createElement('div');
+        newCard.className = 'bg-teal-700 rounded-lg p-2 flex flex-col items-center text-white';
+        newCard.innerHTML = `
+            <div class="w-16 h-16 bg-teal-600 rounded-full mb-2 flex items-center justify-center">
+                <span>🍴</span> <!-- You can customize the icon here -->
+            </div>
+            <div>${foodCalories} kcal</div>
+        `;
+
+        // Insert the new card before the "Add Item" card
+        addItemButton.parentNode.insertBefore(newCard, addItemButton);
+
+        // Clear the modal inputs after saving the item
+        clearInputs();
+
+        // Close the modal
+        addItemModal.classList.add('hidden');
+    });
+});
