@@ -69,47 +69,16 @@ loadComponent('./components/navbar.html', 'navbar-placeholder');
 
     
         (function(d, s, id) {
-            // Function to initialize the widget
-            function initializeWidget(lat, lon) {
-                const widgetContainer = document.querySelector('.tomorrow');
-                widgetContainer.setAttribute('data-location-id', `${lat},${lon}`);
-        
-                if (d.getElementById(id)) {
-                    if (window.__TOMORROW__) {
-                        window.__TOMORROW__.renderWidget();
-                    }
-                    return;
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
                 }
-        
-                const fjs = d.getElementsByTagName(s)[0];
-                const js = d.createElement(s);
-                js.id = id;
-                js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-                fjs.parentNode.insertBefore(js, fjs);
+                return;
             }
-        
-            // Function to get location
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        function(position) {
-                            const lat = position.coords.latitude;
-                            const lon = position.coords.longitude;
-                            initializeWidget(lat, lon);
-                        },
-                        function(error) {
-                            console.error("Geolocation error:", error);
-                            // Fallback: You can set a default location if geolocation fails
-                            initializeWidget(40.7128, -74.0060); // Default to New York City
-                        }
-                    );
-                } else {
-                    console.error("Geolocation is not supported by this browser.");
-                    // Fallback: Set a default location if geolocation is not supported
-                    initializeWidget(40.7128, -74.0060); // Default to New York City
-                }
-            }
-        
-            // Call the function to get location
-            getLocation();
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'tomorrow-sdk');
